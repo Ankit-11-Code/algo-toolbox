@@ -1,27 +1,18 @@
-#!/usr/bin/env python
-# coding: utf-8
+def computeGCD(x, y):
 
-# In[14]:
+    if x > y:
+        small = y
+    else:
+        small = x
+    for i in range(1, small+1):
+        if((x % i == 0) and (y % i == 0)):
+            gcd = i
 
-
-a,b = input().split()
-i=1
-GCD=0
-while i<=int(a) and i<=int(b):
-    if(int(a)%i)==0 and (int(b)%i)==0 :
-        GCD=i
-    i=i+1    
-print(GCD)    
+    return gcd
 
 
-# In[ ]:
+a = int(input("Enter the First Number: "))
+b = int(input("Enter the Second Number: "))
 
-
-
-
-
-# In[ ]:
-
-
-
-
+print("The Gcd of %d and %d is : " % (a, b), end='')
+print(computeGCD(a, b))
